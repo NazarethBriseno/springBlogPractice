@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" th:href="@{/css/navBar.css}">
+</head>
+<body>
+<nav th:fragment="navbar">
+  <h1>Bloggers</h1>
+  <div id="nav-options">
+    <a th:href="@{/posts}"><p>All Posts</p></a>
+    <a th:href="@{/posts/create}"><p>Create a Posts</p></a>
+    <form th:action="@{/logout}" th:method="post">
+      <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+    </form>
+  </div>
+</nav>
+</body>
+</html>

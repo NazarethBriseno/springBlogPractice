@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="partials/fragments :: head">
+    <meta charset="UTF-8">
+    <title>Edit a Post</title>
+
+</head>
+<head>
+    <title>Edit your Post</title>
+    <link rel="stylesheet" th:href="@{/css/edit.css}">
+</head>
+<body>
+<nav th:include="partials/fragments :: navbar"></nav>
+<form method="post" th:object="${editPost}" th:action="@{|/posts/${editPost.getId()}/edit|}">
+    <h1>Edit a Post!</h1>
+    <label for="postTitle">Title:</label>
+    <br>
+    <input type="text" th:value="${editPost.getTitle()}" th:field="*{title}" maxlength="40" id="postTitle">
+    <br><br>
+    <label for="postBody">Post Body:</label>
+    <br>
+    <textarea maxlength="255" id="postBody" th:field="*{body}" rows="10" cols="32"></textarea>
+    <br>
+    <input type="submit" value="Update">
+
+</form>
+</body>
+</html>

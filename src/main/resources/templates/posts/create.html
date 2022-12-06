@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="partials/fragments :: head">
+    <meta charset="UTF-8">
+    <title>Create a Post</title>
+
+</head>
+<head>
+    <title>Create a Post</title>
+    <link rel="stylesheet" th:href="@{/css/create.css}">
+</head>
+<body>
+<nav th:include="partials/fragments :: navbar"></nav>
+<div id="createPostForm">
+    <form th:action="@{/posts/create}" method="post" th:object="${post}">
+        <h1>Create a Post!</h1>
+        <label for="postTitle">Title:</label>
+        <br>
+            <input type="text" th:field="*{title}" maxlength="40" id="postTitle">
+        <br><br>
+        <label for="postBody">Post Body:</label>
+        <br>
+        <textarea maxlength="255" id="postBody" th:field="*{body}" rows="10" cols="32"></textarea>
+        <br>
+        <input type="submit" value="Post">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uh oh...</title>
+    <link rel="stylesheet" th:href="@{/css/error.css}">
+    <link rel="stylesheet" th:href="@{/css/navBar.css}">
+
+</head>
+<body>
+<nav th:include="partials/fragments :: navbar"></nav>
+<div id="errorMessage">
+    <div>
+<h1>Uh oh!</h1>
+<h2>This page either doesn't exist or we are working on it!</h2>
+    </div>
+</div>
+</body>
+</html>

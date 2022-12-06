@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="partials/fragments :: head">
+</head>
+<head>
+    <meta charset="UTF-8">
+    <title>Individual Post</title>
+</head>
+
+<body>
+<nav th:include="partials/fragments :: navbar"></nav>
+<h1>You are viewing post #<span th:text="${id}">ID</span></h1>
+<div th:each="post: ${forcePost}">
+    <h1 th:text="${post.title}">Title</h1>
+    <h2 th:text="${post.body}">Body</h2>
+</div>
+
+</body>
+</html>

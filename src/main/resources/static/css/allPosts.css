@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+}
+.everythingMain{
+    display: flex;
+}
+
+.postsFeed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 30vh;
+    color: white;
+    border: solid;
+    background-color: #362433;
+
+}
+
+.nonCenter{
+    background-color: #301a2d;
+    flex: 1;
+}
+
+#postsContainer{
+    flex:2;
+    margin-top: 70px;
+}
+.postEmail{
+    align-self: flex-end;
+    margin-right: 5px;
+    color: grey;
+}
