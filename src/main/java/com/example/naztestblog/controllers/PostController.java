@@ -5,12 +5,16 @@ import com.example.naztestblog.models.User;
 import com.example.naztestblog.repositories.PostRepository;
 import com.example.naztestblog.repositories.UserRepository;
 import com.example.naztestblog.services.EmailService;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Objects;
+import java.util.ArrayList;
 
 
 @Controller
@@ -28,7 +32,7 @@ public class PostController {
     @GetMapping("/posts")
     public String allPosts(Model model){
         User myUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("allPosts", postDao.findAll());
+        model.addAttribute("allPosts", postDao.findAllByOrderByIdDesc());
         model.addAttribute("user",myUser);
         return "/posts/all-posts";
     }
