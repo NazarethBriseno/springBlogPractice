@@ -32,3 +32,8 @@ body {
     margin-right: 5px;
     color: grey;
 }
+
+.postsFeed:hover{
+    background-color: #8f5485;
+    cursor:pointer;
+}
